@@ -1,8 +1,7 @@
 body {
     background-attachment: scroll;
-    background-color: #a10000;
+    background-color: #A10000;
     margin: 0px;
-    margin-bottom: 64px;
 }
 
 li {
@@ -12,22 +11,22 @@ li {
     line-height: 32px;
 }
 
+.container {
+    width: 1100px;
+ /*   max-width: 1280;
+    padding-bottom: 64px; */
+    height: 100%;
+    margin: auto;
+    gap: 24px;
+    background-color: #FCFCFC;    
+    font-family: sans-serif;
+}
+
 .rubrik {
     color: #a10000;
     font-weight: 700;
     font-style: bold;
     font-size: 28px;
-}
-
-.container {
-    width: 1100px;
-  /*  max-width: 1280; */
-    padding-bottom: 64px;
-    height: 1224px;
-    margin: auto;
-    gap: 24px;
-    background-color: #FCFCFC;    
-    font-family: sans-serif;
 }
 
 .mainbox {
@@ -41,7 +40,19 @@ li {
     background-color: #EBEBEB;
 }
 
-#bild1 {
+.horisont {
+    display: flex;
+    justify-content: center;
+}
+
+.bildBottom {
+    height: 350px;
+    width: 478px;
+    border-width: 1px;
+    border-color: #FCFCFC;
+}
+
+#bildTop {
     height: 500;
     width: 1100px;
     min-height: 500px; 
