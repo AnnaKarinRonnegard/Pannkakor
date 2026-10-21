@@ -1,8 +1,23 @@
+body {
+    background-attachment: scroll;
+    background-color: #9a6a6a;
+}
+
+.container {
+    width: 1100px;
+  /*  max-width: 1280; */
+    padding-bottom: 64px;
+    height: 1224px;
+    margin: auto;
+    gap: 24px;
+    background-color: #FCFCFC;
+}
+
 #bild1 {
-    height: 500px;
-    width: 1000px;
-    max-width: 1280px;
-    min-height: 500px;
+    height: 500;
+    width: 1100px;
+    min-height: 500px; 
+/*    max-width: 1280px;  */
     border: 1px;
     border-color: #FCFCFC;
 }
