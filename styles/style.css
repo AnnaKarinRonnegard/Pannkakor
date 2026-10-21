@@ -1,6 +1,6 @@
 body {
     background-attachment: scroll;
-    background-color: #A10000;
+    background-color: #270202;
     margin: 0px;
 }
 
@@ -22,7 +22,8 @@ li {
     margin: auto;
     margin-bottom: 64px;
     gap: 24px;
-    background-color: #FCFCFC;    
+    background-color: #FCFCFC;
+    /* open sans ?*/    
     font-family: sans-serif;
 }
 
@@ -49,14 +50,13 @@ li {
 }
 
 .bildBottom {
-    height: 350px;
+    height: 450px;
+    width: 100%;
 }
 
 #bildTop {
-    height: 440px;
+    height: 600px;
     width: 100%;
- /*   min-height: 500px; */
- /*  max-width: 100%; */
     border-width: 1px;
     border-color: #FCFCFC;
 }
