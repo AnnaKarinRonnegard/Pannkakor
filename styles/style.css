@@ -5,21 +5,17 @@ body {
     padding-bottom: 64px;
 }
 
-li {
-    line-height: 32px;
-}
-
 .container {
     width: 100vw;
     max-width: 1280px;
     height: 100%;
     margin: auto;
+    display: grid;
+    row-gap:  24px;
     background-color: #FCFCFC;
     font-family: "Open Sans", sans-serif;
     font-weight: 400;
     font-size: 16px;
-    display: grid;
-    row-gap:  24px;
 }
 
 .rubrik {
@@ -31,6 +27,12 @@ li {
 
 .mainbox {
     padding: 20px 48px 48px 48px;
+}
+
+.listor {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
 }
 
 .horisont {
