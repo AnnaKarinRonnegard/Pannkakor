@@ -1,55 +1,56 @@
 body {
     background-attachment: scroll;
-    background-color: #270202;
-    margin: 0px;
-    padding-bottom: 64px;
+    background-color: #270202; /* Det bästa jag kunde hitta */
+    margin: 0px;    /* Har för vana, tar bort default marginaler */
+    padding-bottom: 64px; /* Lägger en bit bakgrundsfärg under containern */
 }
 
-.container {
-    width: 100vw;
-    max-width: 1280px;
-    height: 100%;
-    margin: auto;
-    display: grid;
-    row-gap:  24px;
-    background-color: #FCFCFC;
+.container {    /* Innehåller allt även toppbilden*/
+    width: 100vw;   /* Använder hela skärmen */ 
+    max-width: 1280px; /* Begränsar storleken för stora skärmar */
+    height: 100hw; /* Använder hela skärmen */
+    margin: auto;       /* Lägger innehållet centrerat */
+    background-color: #FCFCFC; /* Enligt mall */
+}
+
+.mainbox {  /* Innehåller det som är under topp bilden */
+    padding: 48px 48px 0px 48px; /* Enligt mall */
+    font-weight: 400;   /* Är på hela innehållet förrutom rubriken */
+    font-size: 16px;    /* Är på hela innehållet förrutom rubriken */
     font-family: "Open Sans", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
+    display: grid;  /* Påverkar gap */
+    gap:  24px;     /* Enligt mallen */
 }
 
-.rubrik {
+.rubrik {   /* Färg och stil enligt mall */
     color: #a10000;
     font-weight: 700;
     font-style: bold;
     font-size: 28px;
 }
 
-.mainbox {
-    padding: 20px 48px 48px 48px;
-}
-
-.listor {
+.listor { 
     display: flex;
     flex-direction: column;
-    row-gap: 16px;
+    gap: 16px;
 }
 
 .horisont {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    column-gap: 24px;
+    display: flex; /* För att kunna centrera bilderna */
+    justify-content: center; /* Centrerar bilderna */
+    width: 100%; /*Använder hela main bredden*/
+    column-gap: 24px; /* Enligt mall */
+    row-gap: 24px; /* Enligt mall? Gör ingen skillnad... */
 }
 
 .bildBottom {
-    height: 467px;
-    width: 50%;
+    height: 467px; /* Enligt mall */
+    width: 50%; /* Använder hälften till varje bild */
 }
 
 #bildTop {
-    height: 500px;
-    width: 100%;
-    border-width: 1px;
-    border-color: #FCFCFC;
+    height: 500px;  /*Enligt mall*/
+    width: 100%; /*Använder hela container bredden*/
+    border-width: 1px;  /*Enligt mall*/
+    border-color: #FCFCFC; /*Enligt mall*/
 }
