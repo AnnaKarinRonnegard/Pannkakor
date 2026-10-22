@@ -5,6 +5,10 @@ body {
     padding-bottom: 64px; /* Lägger en bit bakgrundsfärg under containern */
 }
 
+li {
+    line-height:  32px; 
+}
+
 .container {    /* Innehåller allt även toppbilden*/
     width: 100vw;   /* Använder hela skärmen */ 
     max-width: 1280px; /* Begränsar storleken för stora skärmar */
@@ -27,6 +31,11 @@ body {
     font-weight: 700;
     font-style: bold;
     font-size: 28px;
+}
+
+.text {
+    background-color: #EBEBEB; 
+    padding: 16px;
 }
 
 .listor { 
