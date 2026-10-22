@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>MinaPannkakor</title>
+    <title>Pannkakor</title>
     <link href="./styles/style.css" rel="stylesheet" />
     <!-- Nedanstående tre länkar är för att kunna använda "Open Sans" -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,12 +11,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div class="container"> <!---->
+    <div class="container"> <!--Innehåller allt-->
       <img id="bildTop" src="./images/95bd14c6df095f9dbf4df15f8c7ab3ba0d597919.jpg" alt="Pannkakes"/>
-      <div class="mainBox">  <!---->
-        <div class="textBox">
-          <p class="rubrik">Enkelt recept på pannkanor</p>
-          <p class="text">Gör traditionella tunna pannkakor med detta enkla och goda pannkaksrecept</p>
+      <div class="mainBox">  <!--innehåller allt utom topbilden, sätter padding på hela innehållet -->
+        <div> <!--En "box" som också innehåller allt utom topbilden (tar bort padding) -->
+          <h2 class="rubrik">Enkelt recept på pannkanor</h2>
+          <p class="blueBackground">Gör traditionella tunna pannkakor med detta enkla och goda pannkaksrecept</p>
           <h2>Ingredienser</h2>
           <p>För 4 portioner</p>
           <ul>
@@ -37,11 +37,11 @@
             <li>Servera med sylt, bär eller frukt.</li>
           </ol>
           <h2>Serveringsförslag</h2>
-        </div>
-        <div class="horisontBox">  <!-- Centrerar bilderna nedan, i sällskap med
+          <div class="horisontBox">  <!-- Centrerar bilderna nedan, i sällskap med
                                  bildBottom -->
-          <img class="bildBottom" src="./images/968741c9106b48e3dbf2fc372582a9771186de19.jpg" alt="PannkakesServed1"/>
-          <img class="bildBottom" src="./images/e3465b83e7b6ac3fd00e07736d4f26f7f6315ce2.jpg" alt="PannkakesServed2"/>
+            <img class="bildBottom" src="./images/968741c9106b48e3dbf2fc372582a9771186de19.jpg" alt="PannkakesServed1"/>
+            <img class="bildBottom" src="./images/e3465b83e7b6ac3fd00e07736d4f26f7f6315ce2.jpg" alt="PannkakesServed2"/>
+          </div>
         </div>
       </div>
     </div>
