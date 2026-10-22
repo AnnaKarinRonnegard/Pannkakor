@@ -5,8 +5,9 @@ body {
     padding-bottom: 64px; /* Lägger en bit bakgrundsfärg under containern */
 }
 
-li {
-    line-height:  32px; 
+li {        /* Bestämmer linje höjden på listorna */
+    line-height:  32px;
+    letter-spacing: 0%;
 }
 
 .container {    /* Innehåller allt även toppbilden*/
@@ -17,8 +18,8 @@ li {
     background-color: #FCFCFC; /* Enligt mall */
 }
 
-.mainbox {  /* Innehåller det som är under topp bilden */
-    padding: 48px 48px 0px 48px; /* Enligt mall */
+.mainBox {  /* Innehåller det som är under topp bilden */
+    padding: 48px 48px 64px 48px; /* Enligt mall */
     font-weight: 400;   /* Är på hela innehållet förrutom rubriken */
     font-size: 16px;    /* Är på hela innehållet förrutom rubriken */
     font-family: "Open Sans", sans-serif;
@@ -33,23 +34,17 @@ li {
     font-size: 28px;
 }
 
-.text {
+.text { /* Skapar ljusblå bakgrund till text (enligt mall) */
     background-color: #EBEBEB; 
     padding: 16px;
 }
 
-.listor { 
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.horisont {
+.horisontBox {
     display: flex; /* För att kunna centrera bilderna */
     justify-content: center; /* Centrerar bilderna */
     width: 100%; /*Använder hela main bredden*/
+   /* row-gap: 24px; /* Enligt mall? Gör ingen skillnad... */
     column-gap: 24px; /* Enligt mall */
-    row-gap: 24px; /* Enligt mall? Gör ingen skillnad... */
 }
 
 .bildBottom {
@@ -58,7 +53,7 @@ li {
 }
 
 #bildTop {
-    height: 500px;  /*Enligt mall*/
+    height: 500px;  /* Nästan Enligt mall*/
     width: 100%; /*Använder hela container bredden*/
     border-width: 1px;  /*Enligt mall*/
     border-color: #FCFCFC; /*Enligt mall*/
