@@ -22,6 +22,9 @@ li {        /* Bestämmer stil på listorna */
     font-weight: 400;   /* Är på hela innehållet förrutom rubriken */
     font-size: 16px;    /* Samma som ovan */
     font-family: "Open Sans", sans-serif;
+}
+
+.gapet {
     display: grid;  /* Ska vara för gap */
     gap:  24px;     /* Enligt mallen */
 }
@@ -42,7 +45,6 @@ li {        /* Bestämmer stil på listorna */
     display: flex; /* För att kunna centrera bilderna */
     justify-content: center; /* Centrerar bilderna */
     width: 100%; /*Använder hela mainBox bredden */
-   /* row-gap: 24px; /* Enligt mall? Gör ingen skillnad... */
     column-gap: 24px; /* Enligt mall */
 }
 
