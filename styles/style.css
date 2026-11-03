@@ -60,3 +60,9 @@ li {        /* Bestämmer stil på listorna */
     height: 467px; /* Enligt mall */
     width: 50%; /* Använder hälften av utrymmet på horizontBox till varje bild */
 }
+
+.footer {
+    font-size: 1.2rem; 
+    color: #EBEBEB; 
+    padding: 1vh 1vw;
+}
