@@ -76,7 +76,7 @@ img:focus-visible {
 
 .bildTop {
     height: 500px;  /* Nästan enligt mall */
-    width: 100%; /* Använder hela container bredden */
+    width: 100%;   /* Använder hela container boxen */
     border-width: 1px;  /* Enligt mall */
     border-color: #FCFCFC; /* Enligt mall */
 }
