@@ -3,13 +3,20 @@
 }
 
 body {
-    margin: 0px;    /* Har för vana, tar bort default marginal */
     background-color: #270202; /* Det bästa jag kunde hitta */
+    margin: 0px;    /* Har för vana, tar bort default marginal */
 }
 
 li {        /* Bestämmer stil på listorna */
     line-height:  32px;
     letter-spacing: 0%;
+}
+
+h1 {   /* Färg och stil enligt mall */
+    color: #a10000;
+    font-weight: 700;
+    font-style: bold;
+    font-size: 1.75rem;
 }
 
 .container {    /* Innehåller allt även toppbilden */
@@ -37,13 +44,6 @@ li {        /* Bestämmer stil på listorna */
     gap:  24px;     /* Enligt mallen */
 }
 
-.rubrik {   /* Färg och stil enligt mall */
-    color: #a10000;
-    font-weight: 700;
-    font-style: bold;
-    font-size: 1.75rem;
-}
-
 .blueBackground { /* Skapar ljusblå bakgrund till text (enligt mall) */
     background-color: #EBEBEB;
     padding: 16px;  
@@ -61,7 +61,7 @@ li {        /* Bestämmer stil på listorna */
     width: 50%; /* Använder hälften av utrymmet på horizontBox till varje bild */
 }
 
-.footer {
+.fotnot {
     font-size: 1.2rem; 
     color: #EBEBEB; 
     padding: 1vh 1vw;
