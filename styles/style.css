@@ -14,7 +14,7 @@ h1 {   /* Färg och stil enligt mall */
     font-size: 1.75rem;
 }
 
-h1:focus-visible {
+h1:focus {
     border: solid 4px #270202;
     padding: 0vh 1vw;
     width: fit-content;
@@ -25,24 +25,24 @@ li {        /* Bestämmer stil på listorna */
     letter-spacing: 0%;
 }
 
-li:focus-visible {
+li:focus {
     border: solid 4px #270202;
     padding: 0vh 1vw;
     width: fit-content;
 }
 
-h2:focus-visible {
+h2:focus {
     border: solid 4px #270202;
     width: fit-content;
 }
 
-p:focus-visible {
+p:focus {
     border: solid 4px #270202;
     padding: 0vh 1vw;
     width: fit-content;
 }
 
-img:focus-visible {
+img:focus {
     padding: 10vh 1vw;
     border: solid 4px #270202;
 }
