@@ -21,7 +21,7 @@ h1:focus-visible {
 }
 
 li {        /* Bestämmer stil på listorna */
-    line-height:  32px;
+    line-height:  2rem;
     letter-spacing: 0%;
 }
 
@@ -71,7 +71,7 @@ img:focus-visible {
     height: 100hw; /* Använder hela skärmen */
     margin: auto;       /* Lägger innehållet centrerat */
     background-color: #FCFCFC; /* Enligt mall */
-    margin-bottom: 64px; /* Lägger en bit bakgrundsfärg under containern */
+    margin-bottom: 4rem; /* Lägger en bit bakgrundsfärg under containern */
 }
 
 .bildTop {
@@ -82,31 +82,31 @@ img:focus-visible {
 }
 
 .content {  /* Innehåller det som är under topp bilden */
-    padding: 48px 48px 64px 48px; /* Enligt mall */
+    padding: 2rem 2rem 3rem 2rem; /* Enligt mall */
     font-weight: 400;   /* Är på hela innehållet förrutom rubriken */
     font-size: 1rem;    /* Samma som ovan */
     font-family: "Open Sans", sans-serif;
     display: grid;  /* Ska vara för gap */
-    gap:  24px;     /* Enligt mallen */
+    gap:  1.75rem;     /* Enligt mallen */
 }
 
 .blueBackground { /* Skapar ljusblå bakgrund till text (enligt mall) */
     background-color: #EBEBEB;
-    padding: 16px;  
+    padding: 1rem;  
 }
 
 .blueBackground:focus-visible {
     border: solid 4px #270202;
     background-color: #EBEBEB;
     width: auto;
-    padding: 16px;
+    padding: 1rem;
 }
 
 .horisontBox {
     display: flex; /* För att kunna centrera bilderna */
     justify-content: center; /* Centrerar bilderna */
     width: 100%; /*Använder hela mainBox bredden */
-    column-gap: 24px; /* Enligt mall */
+    column-gap: 1.75rem; /* Enligt mall */
 }
 
 .bildBottom {
