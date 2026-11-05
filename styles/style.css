@@ -40,12 +40,6 @@ li {        /* Bestämmer stil på listorna */
     line-height:  2rem;
     letter-spacing: 0%;
 }
-/* 
-li:focus {
-    border: solid 1px #270202;
-    padding: 0vh 1vw;
-    width: fit-content;
-} */
 
 .skipLink {
     position: absolute;
@@ -103,15 +97,13 @@ li:focus {
 }
 
 .horizontalBox {
-    display: flex; /* För att kunna lägga bilderna horisontellt */
-    justify-content: center; /* Centrerar bilderna */
-    width: 100%; /*Använder hela mainBox bredden */
+    display: flex; /* För att lägga bilderna horisontellt */
     column-gap: 1.5rem; /* Enligt mall */
 }
 
 .imagesBottom {
     height: 467px; /* Enligt mall */
-    width: 50%; /* Använder hälften av utrymmet på horizontBox till varje bild */
+    flex: 1; /* Fyller ut tilldelat utrymme */
 }
 
 .footer {
