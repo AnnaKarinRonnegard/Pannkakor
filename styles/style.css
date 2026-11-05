@@ -11,7 +11,7 @@ h1 {   /* Färg och stil enligt mall */
     color: #a10000;
     font-weight: 700;
     font-style: bold;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
 }
 
 h1:focus {
@@ -24,27 +24,23 @@ li {        /* Bestämmer stil på listorna */
     line-height:  2rem;
     letter-spacing: 0%;
 }
-
+/* 
 li:focus {
-    border: solid 4px #270202;
+    border: solid 2px #270202;
     padding: 0vh 1vw;
     width: fit-content;
-}
+} */
 
 h2:focus {
-    border: solid 4px #270202;
+    border: solid 2px #270202;
+    padding: 0vh 1vw;
     width: fit-content;
 }
 
 p:focus {
-    border: solid 4px #270202;
+    border: solid 2px #270202;
     padding: 0vh 1vw;
     width: fit-content;
-}
-
-img:focus {
-    padding: 10vh 1vw;
-    border: solid 4px #270202;
 }
 
 .skipLink {
@@ -74,7 +70,7 @@ img:focus {
     margin-bottom: 4rem; /* Lägger en bit bakgrundsfärg under containern */
 }
 
-.bildTop {
+.imageTop {
     height: 500px;  /* Nästan enligt mall */
     width: 100%;   /* Använder hela container boxen */
     border-width: 1px;  /* Enligt mall */
@@ -87,7 +83,7 @@ img:focus {
     font-size: 1rem;    /* Samma som ovan */
     font-family: "Open Sans", sans-serif;
     display: grid;  /* Ska vara för gap */
-    gap:  1.75rem;     /* Enligt mallen */
+    gap:  1.5rem;     /* Enligt mallen */
 }
 
 .blueBackground { /* Skapar ljusblå bakgrund till text (enligt mall) */
@@ -102,24 +98,24 @@ img:focus {
     padding: 1rem;
 }
 
-.horisontBox {
+.horizontalBox {
     display: flex; /* För att kunna centrera bilderna */
     justify-content: center; /* Centrerar bilderna */
     width: 100%; /*Använder hela mainBox bredden */
-    column-gap: 1.75rem; /* Enligt mall */
+    column-gap: 1.5rem; /* Enligt mall */
 }
 
-.bildBottom {
+.imagesBottom {
     height: 467px; /* Enligt mall */
     width: 50%; /* Använder hälften av utrymmet på horizontBox till varje bild */
 }
 
-.fotnot {
+.footer {
     font-size: 1.2rem; 
     color: #EBEBEB; 
     padding: 1vh 1vw;
 }
 
-.fotnot:focus-visible {
-    border: #FCFCFC solid 4px;
+.footer:focus {
+    border: #FCFCFC solid 2px;
 }
