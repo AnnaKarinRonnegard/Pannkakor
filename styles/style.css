@@ -15,7 +15,23 @@ h1 {   /* Färg och stil enligt mall */
 }
 
 h1:focus {
-    border: solid 4px #270202;
+    border: solid 1px #270202;
+    padding: 0vh 1vw;
+    width: fit-content;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h2:focus {
+    border: solid 1px #270202;
+    padding: 0vh 1vw;
+    width: fit-content;
+}
+
+p:focus {
+    border: solid 1px #270202;
     padding: 0vh 1vw;
     width: fit-content;
 }
@@ -26,39 +42,27 @@ li {        /* Bestämmer stil på listorna */
 }
 /* 
 li:focus {
-    border: solid 2px #270202;
+    border: solid 1px #270202;
     padding: 0vh 1vw;
     width: fit-content;
 } */
 
-h2:focus {
-    border: solid 2px #270202;
-    padding: 0vh 1vw;
-    width: fit-content;
-}
-
-p:focus {
-    border: solid 2px #270202;
-    padding: 0vh 1vw;
-    width: fit-content;
-}
-
 .skipLink {
     position: absolute;
-    top: -100px;
+    top: -100px; /* Lägger länken utanför webbsidan */
     left: 1rem;
-    z-index: 1000;
+    z-index: 1000; /*Gör att länker syns över allt annat innehåll*/
 
     padding: 0.75rem 1.5rem;
     background: #FCFCFC;
     color: #270202;
     font-weight: 700;
-    border: 2px solid #270202;
+    border: 1px solid #270202;
     border-radius: 4px;
 }
 
-.skipLink:focus-visible {
-    top: 1rem;
+.skipLink:focus {
+    top: 1rem; /* Visar länken inom webbsidan */
 }
 
 .container {    /* Innehåller allt även toppbilden */
@@ -91,15 +95,15 @@ p:focus {
     padding: 1rem;  
 }
 
-.blueBackground:focus-visible {
-    border: solid 4px #270202;
+.blueBackground:focus {
+    border: solid 1px #270202;
     background-color: #EBEBEB;
     width: auto;
     padding: 1rem;
 }
 
 .horizontalBox {
-    display: flex; /* För att kunna centrera bilderna */
+    display: flex; /* För att kunna lägga bilderna horisontellt */
     justify-content: center; /* Centrerar bilderna */
     width: 100%; /*Använder hela mainBox bredden */
     column-gap: 1.5rem; /* Enligt mall */
@@ -117,5 +121,5 @@ p:focus {
 }
 
 .footer:focus {
-    border: #FCFCFC solid 2px;
+    border: #FCFCFC solid 1px;
 }
