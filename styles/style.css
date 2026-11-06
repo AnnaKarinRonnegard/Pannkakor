@@ -37,10 +37,24 @@ h3 {
     font-weight: 400;
 }
 
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: var(--commonPadding);
+}
+
+ol {
+  padding: 1rem;
+}
 
 img {
     height: 450px;  /* Nästan enligt mall */
     width: 100%;   /* Använder hela container boxen */
+}
+
+fieldset {
+    border:none;
+    padding: 0;
 }
 
 .forDescribtionBottom{
