@@ -69,14 +69,24 @@ fieldset {
 
 dl {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 lika stora kolumner */
+    grid-template-columns: repeat(2 1ft); /* 3 lika stora kolumner */
     border: #270202 1px solid;
     border-right: none;
     margin: 0;
 }
 
+dt {
+    grid-row-start: 1;
+    padding-block: var(--commonPadding);
+    text-align: center;
+    border-right:  #270202 1px solid;
+    border-bottom:  #270202 1px solid;
+    font-weight: 600;
+    margin: 0;
+}
+
 dd {
-    font-weight: bold;
+    grid-row-start: 2;
     padding-block: var(--commonPadding);
     text-align: center;
     border-right:  #270202 1px solid;
