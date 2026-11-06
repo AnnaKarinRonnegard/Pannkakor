@@ -1,11 +1,11 @@
 * {
     box-sizing: border-box;
+    margin: 0px;    /* Har för vana, tar bort default marginal */
 }
 
 body {
     background-color: #270202; /* Det bästa jag kunde hitta */
-    margin: 0px;    /* Har för vana, tar bort default marginal */
-}
+} 
 
 h1 {   /* Färg och stil enligt mall */
     color: #a10000;
@@ -30,10 +30,33 @@ h2:focus {
     width: fit-content;
 }
 
-p:focus {
-    border: solid 1px #270202;
-    padding: 0vh 1vw;
-    width: fit-content;
+h3 {
+    font-weight: 400;
+}
+
+
+img {
+    height: 470px;  /* Nästan enligt mall */
+    width: 100%;   /* Använder hela container boxen */
+}
+
+dl {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Termen tar sin egen bredd, beskrivningen fyller resten */
+    font-weight: 400;
+    justify-content: left;
+    border: #270202 1px solid;
+    border-right: none;
+}
+
+dt {
+    font-weight: bold;
+    padding-block: 1.5rem;
+    text-align: center;
+    border-right:  #270202 1px solid;
+    font-size: larger;
+    font-weight: 400;
 }
 
 li {        /* Bestämmer stil på listorna */
@@ -68,19 +91,13 @@ li {        /* Bestämmer stil på listorna */
     margin-bottom: 4rem; /* Lägger en bit bakgrundsfärg under containern */
 }
 
-.imageTop {
-    height: 500px;  /* Nästan enligt mall */
-    width: 100%;   /* Använder hela container boxen */
-    border-width: 1px;  /* Enligt mall */
-    border-color: #FCFCFC; /* Enligt mall */
-}
-
 .content {  /* Innehåller det som är under topp bilden */
     padding: 2rem 2rem 3rem 2rem; /* Enligt mall */
     font-weight: 400;   /* Är på hela innehållet förrutom rubriken */
     font-size: 1rem;    /* Samma som ovan */
     font-family: "Open Sans", sans-serif;
-    display: grid;  /* Ska vara för gap */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 lika stora kolumner */
     gap:  1.5rem;     /* Enligt mallen */
 }
 
@@ -89,29 +106,8 @@ li {        /* Bestämmer stil på listorna */
     padding: 1rem;  
 }
 
-.blueBackground:focus {
-    border: solid 1px #270202;
-    background-color: #EBEBEB;
-    width: auto;
-    padding: 1rem;
-}
-
-.horizontalBox {
-    display: flex; /* För att lägga bilderna horisontellt */
-    column-gap: 1.5rem; /* Enligt mall */
-}
-
-.imagesBottom {
-    height: 467px; /* Enligt mall */
-    flex: 1; /* Fyller ut tilldelat utrymme */
-}
-
 .footer {
     font-size: 1.2rem; 
     color: #EBEBEB; 
     padding: 1vh 1vw;
-}
-
-.footer:focus {
-    border: #FCFCFC solid 1px;
 }

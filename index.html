@@ -13,18 +13,23 @@
   </head>
   <body>
     <main class="container"> <!-- Huvudinnehållet -->
-      <img class="imageTop" src="./images/Pannkakor.jpg" alt="Pannkakor"/>
       <article class="content">  <!--classen content innehåller allt utom topbilden. Content sätter padding på hela innehållet samt avstånd mellan boxarna (gap) -->
+      <img src="./images/Pannkakor.jpg" alt="Pannkakor"/>
         <section>
           <h1 tabindex="0">Enkelt recept på pannkakor</h1>
                 <!-- Skip link -->
           <a tabindex="0" href="#recipe" class="skipLink">Hoppa till receptet </a>
           <p tabindex="0" class="blueBackground">Gör traditionella tunna pannkakor med detta enkla och goda pannkaksrecept</p>
+          <dl>
+            <dt>4 portioner</dt> 
+            <dt>30 minuter</dt>
+            <dt>Lätt</dt>
+          </dl>
          </section>
 
         <section>
           <h2 tabindex="0" id="recipe">Ingredienser</h2>
-          <p tabindex="0">För 4 portioner</p>
+          <p>För 4 portioner</p>
           <ul>
             <li>2 1/2 dl vetemjöl</li>
             <li>1/2 tsk salt</li>
@@ -36,7 +41,7 @@
         </section>
 
         <section>
-          <h2 tabindex="0">Så här gör du</h2>
+          <h2>Så här gör du</h2>
           <ol>
             <li>Blanda mjöl och salt i en bunke.</li>
             <li>Vispa i hälften av mjölken och vispa till en slät smet.</li>
@@ -49,16 +54,24 @@
 
         <section>
           <h2>Serveringsförslag</h2>
-          <div class="horizontalBox">  <!-- Centrerar bilderna nedan horisontellt. Classen imageBottom anger storleken -->
-            <img class="imagesBottom" src="./images/PannkakorMedGradde.jpg" alt="Pannkakor med grädde"/>
-            <img class="imagesBottom" src="./images/PannkakorMedFrukt.jpg" alt="Pannkakor med frukt"/>
-          </div>
+        </section>
+
+        <section></section>
+
+        <section>
+          <img src="./images/PannkakorMedGradde.jpg" alt="Pannkakor med grädde och sylt"/>
+          <h3>Med sylt & grädde</h3>
+        </section>
+        
+        <section>
+          <img src="./images/PannkakorMedFrukt.jpg" alt="Pannkakor med frukt"/>
+          <h3>Med apelsin</h3>
         </section>
 
       </article>
     </main>
     <footer class="footer">
-      <p tabindex="0">2026 Anna-Karin Rönnegård</p>
+      <p>&copy; 2026 Anna-Karin Rönnegård</p>
     </footer>
   </body>
 </html>
