@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
     margin: 0px;    /* Har för vana, tar bort default marginal */
+    --standardPadding: 1.5rem;
 }
 
 body {
@@ -11,7 +12,7 @@ h1 {   /* Färg och stil enligt mall */
     color: #a10000;
     font-weight: 700;
     font-style: bold;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 h1:focus {
@@ -52,7 +53,7 @@ dl {
 
 dt {
     font-weight: bold;
-    padding-block: 1.5rem;
+    padding-block: var(--standardPadding);
     text-align: center;
     border-right:  #270202 1px solid;
     font-size: larger;
@@ -70,7 +71,7 @@ li {        /* Bestämmer stil på listorna */
     left: 1rem;
     z-index: 1000; /*Gör att länker syns över allt annat innehåll*/
 
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem var(--standardPadding);
     background: #FCFCFC;
     color: #270202;
     font-weight: 700;
@@ -92,22 +93,23 @@ li {        /* Bestämmer stil på listorna */
 }
 
 .content {  /* Innehåller det som är under topp bilden */
-    padding: 2rem 2rem 3rem 2rem; /* Enligt mall */
+    padding: 3rem 2rem; /* Enligt mall */
     font-weight: 400;   /* Är på hela innehållet förrutom rubriken */
     font-size: 1rem;    /* Samma som ovan */
     font-family: "Open Sans", sans-serif;
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 lika stora kolumner */
-    gap:  1.5rem;     /* Enligt mallen */
+    gap:  var(--standardPadding);     /* Enligt mallen */
 }
 
 .blueBackground { /* Skapar ljusblå bakgrund till text (enligt mall) */
     background-color: #EBEBEB;
+    margin-top: 2rem;
     padding: 1rem;  
 }
 
 .footer {
-    font-size: 1.2rem; 
+    font-size: 1.2rem;
     color: #EBEBEB; 
     padding: 1vh 1vw;
 }
