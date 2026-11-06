@@ -1,18 +1,19 @@
 * {
     box-sizing: border-box;
-    margin: 0px;    /* Har för vana, tar bort default marginal */
-    --standardPadding: 1.5rem;
+    --commonPadding: 1.5rem;
 }
 
 body {
     background-color: #270202; /* Det bästa jag kunde hitta */
-} 
+    margin: 0px;    /* Har för vana, tar bort default marginal */
+}
 
 h1 {   /* Färg och stil enligt mall */
     color: #a10000;
     font-weight: 700;
     font-style: bold;
-    font-size: 2rem;
+    font-size: 2.3rem;
+    margin-top: 0;
 }
 
 h1:focus {
@@ -22,6 +23,7 @@ h1:focus {
 }
 
 h2 {
+    margin: 4rem 0rem 1rem;
     font-size: 1.5rem;
 }
 
@@ -37,27 +39,45 @@ h3 {
 
 
 img {
-    height: 470px;  /* Nästan enligt mall */
+    height: 450px;  /* Nästan enligt mall */
     width: 100%;   /* Använder hela container boxen */
 }
 
+.forDescribtionBottom{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.describtionBottom {
+  margin-top: auto;
+}
+
 dl {
-    margin-top: 4rem;
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Termen tar sin egen bredd, beskrivningen fyller resten */
-    font-weight: 400;
-    justify-content: left;
+    grid-template-columns: repeat(3, 1fr); /* 3 lika stora kolumner */
     border: #270202 1px solid;
     border-right: none;
+    margin: 0;
 }
 
 dt {
     font-weight: bold;
-    padding-block: var(--standardPadding);
+    padding-block: 1rem var(--commonPadding);
     text-align: center;
     border-right:  #270202 1px solid;
-    font-size: larger;
+    border-bottom:  #270202 1px solid;
+    font-weight: 600;
+    margin: 0;
+}
+
+dd {
+    font-weight: bold;
+    padding-block: var(--commonPadding);
+    text-align: center;
+    border-right:  #270202 1px solid;
     font-weight: 400;
+    margin: 0;
 }
 
 li {        /* Bestämmer stil på listorna */
@@ -71,7 +91,7 @@ li {        /* Bestämmer stil på listorna */
     left: 1rem;
     z-index: 1000; /*Gör att länker syns över allt annat innehåll*/
 
-    padding: 0.75rem var(--standardPadding);
+    padding: 0.75rem var(--commonPadding);
     background: #FCFCFC;
     color: #270202;
     font-weight: 700;
@@ -88,18 +108,18 @@ li {        /* Bestämmer stil på listorna */
     max-width: 1280px; /* Begränsar storleken enligt mall */
     height: 100hw; /* Använder hela skärmen */
     margin: auto;       /* Lägger innehållet centrerat */
+     padding: 3rem 2rem;
     background-color: #FCFCFC; /* Enligt mall */
-    margin-bottom: 4rem; /* Lägger en bit bakgrundsfärg under containern */
+    margin-bottom: 2rem; /* Lägger en bit bakgrundsfärg under containern */
 }
 
 .content {  /* Innehåller det som är under topp bilden */
-    padding: 3rem 2rem; /* Enligt mall */
     font-weight: 400;   /* Är på hela innehållet förrutom rubriken */
     font-size: 1rem;    /* Samma som ovan */
     font-family: "Open Sans", sans-serif;
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 lika stora kolumner */
-    gap:  var(--standardPadding);     /* Enligt mallen */
+    column-gap:  var(--commonPadding);     /* Enligt mallen */
 }
 
 .blueBackground { /* Skapar ljusblå bakgrund till text (enligt mall) */
@@ -108,8 +128,19 @@ li {        /* Bestämmer stil på listorna */
     padding: 1rem;  
 }
 
+.servering {
+    margin-bottom: 1rem;
+}
+
+.bottomImg {
+    img {
+        height:250px;
+    }
+}
+
 .footer {
+    margin-bottom: 2rem;
+    justify-items: center;
     font-size: 1.2rem;
     color: #EBEBEB; 
-    padding: 1vh 1vw;
 }
