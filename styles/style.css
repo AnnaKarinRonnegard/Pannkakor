@@ -75,16 +75,6 @@ dl {
     margin: 0;
 }
 
-dt {
-    font-weight: bold;
-    padding-block: 1rem var(--commonPadding);
-    text-align: center;
-    border-right:  #270202 1px solid;
-    border-bottom:  #270202 1px solid;
-    font-weight: 600;
-    margin: 0;
-}
-
 dd {
     font-weight: bold;
     padding-block: var(--commonPadding);
