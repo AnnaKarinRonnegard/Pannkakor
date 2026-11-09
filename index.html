@@ -6,10 +6,6 @@
     <meta name="description" content="author: Anna-Karin Ronnegard">
     <title>Pannkakor</title>
     <link href="./styles/style.css" rel="stylesheet" />
-    <!-- Nedanstående tre länkar är för att kunna använda "Open Sans" -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
   </head>
   <body>
     <main class="main-container"> <!-- Huvudinnehållet -->
@@ -22,7 +18,7 @@
         <section class="row1-col2">
           <h1 tabindex="0">Enkelt recept på pannkakor</h1>
                 <!-- Skip link -->
-          <a tabindex="0" href="#ingredient-list" class="skip-link">Hoppa till receptet </a>
+          <a tabindex="0" href="#ingredients-list" class="skip-link">Hoppa till receptet </a>
           <p tabindex="0" class="blue-background">Gör traditionella tunna pannkakor med detta enkla och goda pannkaksrecept</p>
           <div class="describtion-bottom">
             <dl>
@@ -39,10 +35,10 @@
          </section>
 
         <section class="row2-col1">
-          <h2 tabindex="0" id="ingredient-list">Ingredienser</h2>
+          <h2 tabindex="0" id="ingredients-list">Ingredienser</h2>
           <fieldset>
           <legend>För 4 portioner</legend>
-          <ul>
+          <ul role="list">
             <li>  
               <input type="checkbox" id="mjol">
               <label for="mjol">2 1/2 dl vetemjöl</label>
@@ -73,7 +69,7 @@
 
         <section class="row2-col2">
           <h2>Så här gör du</h2>
-          <ol>
+          <ol role="list">
             <li>Blanda mjöl och salt i en bunke.</li>
             <li>Vispa i hälften av mjölken och vispa till en slät smet.</li>
             <li>Vispa i resten av mjölken och äggen.</li>
