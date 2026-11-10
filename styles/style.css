@@ -185,40 +185,40 @@ article {  /* Innehåller pannkakor */
 }
 
 .heading-and-summary {
+    /* För dl i botten */
     display: flex;
-    flex-direction: column;
-    height: 100%;
-    margin-top: auto;
-        
+    flex-direction: column; 
+    height: 100%; 
+
     dl {
+        margin-top: auto; /* För dl i botten */
         display: grid;
         grid-template-columns: repeat(2 1ft); /* 3 lika stora kolumner */
-        border: #270202 0.0625em solid;
-        border-right: none;
-        margin: 0;
+            
+        dt, dd {    /* Gemensamt för dd och dt */
+            padding-block: var(--commonPadding);
+            text-align: center;
+            border:  #270202 0.0625em solid;
+            &:not(:nth-child(n+5)) {
+                border-right: none; /* Tar bort dubbel border */
+            }
+         }
+
+        dt {
+            grid-row-start: 1; /* dt startar på första raden */
+            font-weight: 600;
+        }
+
+        dd {
+            grid-row-start: 2; /* dt startar på andra raden */
+            font-weight: 400;
+            border-top: none; /* Tar bort dubbel border */
+        }
+
     }
 
-    dt {
-        grid-row-start: 1; /* dt startar på första raden */
-        padding-block: var(--commonPadding);
-        text-align: center;
-        border-right:  #270202 0.0625em solid;
-        border-bottom:  #270202 1px solid;
-        font-weight: 600;
-        margin: 0;
-    }
-
-    dd {
-        grid-row-start: 2; /* dt startar på andra raden */
-        padding-block: var(--commonPadding);
-        text-align: center;
-        border-right:  #270202 0.0625em solid;
-        font-weight: 400;
-        margin: 0;
-    }
-
-    :nth-child(3):not(dl, dt, dd) { /* Skapar ljusblå bakgrund till text */
-        background-color: #EBEBEB;  /* Förvisso enklare att skriva p */
+     p:nth-of-type(1) { /* Skapar ljusblå bakgrund till text */
+        background-color: #EBEBEB;  /* Förvisso enklare att skriva bara p */
         margin-top: 2em;
         padding: 1em;
     }
@@ -246,8 +246,8 @@ article {  /* Innehåller pannkakor */
     }
 }
 
-.serve {
-    padding-bottom: 0.5em;
+.text-serving-suggestion {
+    padding-bottom: 0.5em; 
 }
 
 .bottom-image {
