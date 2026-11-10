@@ -1,34 +1,62 @@
 * {
-    box-sizing: border-box;
     padding: 0;
     font:inherit;
-    --commonPadding: 1.5rem; /* skapar en variabel */
+    --commonPadding: 1.5rem; /* Skapar en variabel */
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}  /*  :: är pseusoelement som används för att lägga till (dekorativt) innehåll eller stilar före eller efter ett elements faktiska innehåll, utan att du behöver ändra själva HTML-strukturen.
+De skapas virtuellt i webbläsaren och syns inte i DOM-trädet, vilket gör att skärmläsare ibland kan missa dem.
+
+Exempel:
+Lägger till Read this: före det som är definierat mellan p-taggarna på varje p.
+p::before {
+  content: "Read this: ";
+}
+ */
+*:not(dialog) {
+    margin: 0; 
+}
+
+/* Förhindrar font size inflation, dvs att webbläsaren ökar den teckenstorleken automatiskt på t.ex en mobil. Detta kan förstöra designen på en responsiv design */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
 }
 
 /* * {
   line-height: calc(1em + 0.5rem); 
 } */
 
-*:not(dialog) {
-  margin: 0; 
-}
-
 img,
 picture,
 video,
 canvas,
 svg {
-  display: block;
-  max-width: 100%;
+    display: block;
+    max-width: 100%;
   /* vertical-align: middle; tips, dock ej med display: block.... */
 }
 
-p {
-  text-wrap: pretty; /* gör att ej finns enstaka ord under... */
-  margin-block: 1em; /* lägger till margin mellan p-taggar */
-  overflow-wrap: break-word; /* hindrar overflow om mindre box-utrymma än ordlängd */
-  hyphens: auto; /* orden "break-word" avdelas efter ordlista */
-}
+/* input,  
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}  Används förvisso inte i detta dokument, men exempel är bra att ha.
+
+textarea:not([rows]) {
+  min-height: 10em
+}   Används förvisso inte i detta dokument, men exempel är bra att ha. */
+
+/* :target {
+  scroll-margin-block: 5ex;
+} */
 
 h1,
 h2,
@@ -36,29 +64,38 @@ h3,
 h4,
 h5,
 h6 {
-  text-wrap: balance; /* rubriker balanseras om långa */
-  overflow-wrap: break-word;
-  hyphens: auto;
+    text-wrap: balance; /* Rubriker balanseras om långa */
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
-/* Remove list styles on ul, ol elements with a list role. OBS sätt role="list" på ol- eller ul-tag */
+/* Bas styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: bold;
+    text-wrap: balance; /* Ser till att texten avvägs jämnt vid radbryt */
+}
+
+p {
+    text-wrap: pretty; /* Ser till att enstaka ord ej finns ensamt under */
+    margin-block: 1rem; /* Lägger till margin mellan p-taggar, då de var borta */
+    overflow-wrap: break-word; /* Hindrar overflow om mindre box-utrymma än ordlängd */
+    hyphens: auto; /* Orden "break-word" avdelas efter ordlista */
+    /* Sätter höjden mellan varje rad, bra med en bit över 1 för läsbarhet  */
+    line-height: 1.5;/
+ /* max-width: 30ch; - begränsar textrader till 30 char om mycket text */
+}
+
+
+/* Ta bort list-style på ul och ol element med en list role. OBS sätt role="list" på ol- eller ul-tag */
 ul[role="list"],
 ol[role="list"] {
-  list-style: none;
+    list-style: none;
 }
-
-
-/* Base styles */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: bold;
-  text-wrap: balance;
-}
-
 
 body {
     min-height: 100vh;
@@ -69,18 +106,18 @@ h1 {
     color: #a10000;
     font-weight: 700;
     font-style: bold;
-    font-size: 2.3em;
+    font-size: 2.3rem;
 }
 
 h1:focus {
     border: solid 0.06rem #270202;
-    padding: 0.5vh 1vw 1vh;
+    padding: 0.2em 0.5em;
     width: fit-content;
 }
 
 h2 {
-    padding: 4em 0em 1em;
-    font-size: 1.5em;
+    padding: 4rem 0rem 1rem;
+    font-size: 1.5rem;
 }
 
 h2:focus {
@@ -91,19 +128,9 @@ h2:focus {
 }
 
 h3 {
-    font-size: 1.17em;
+    font-size: 1.17rem;
     font-weight: 400;
-    padding: 1em 0;
-}
-
-p {
-  text-wrap: pretty; /* Ser till att enstaka ord ej finns ensamt under */
-
-    /* sets the height between each row, usually good with a bit more than 1 for readability  */
-    line-height: 1.5;
-    /* set the margin above/below each paragraph since we removed these. Can be done in other ways too */
-    margin-block: 1em;
- /* max-width: 30ch; - begränsar textrader om mycket text */
+    padding: 1rem 0;
 }
 
 article {  /* Innehåller pannkakor */
