@@ -109,22 +109,21 @@ h1 {
     font-size: 2.3rem;
 }
 
-h1:focus {
-    border: solid 0.06rem #270202;
-    padding: 0.2em 0.5em;
-    width: fit-content;
-}
-
 h2 {
     padding: 4rem 0rem 1rem;
     font-size: 1.5rem;
 }
 
-h2:focus {
-    border: solid 0.03rem #270202;
-    margin: 4em 0 1em;
+h2, h1 {
+    &:focus-visible {
+    border: solid 0.0625em #270202;
     padding: 0.2em 0.5em;
     width: fit-content;
+    }
+}
+
+h2:focus-visible {
+    margin: 2.2em 0 var(--commonPadding);
 }
 
 h3 {
@@ -135,7 +134,7 @@ h3 {
 
 article {  /* Innehåller pannkakor */
     font-weight: 400;   /* Är på hela innehållet förrutom rubriken */
-    font-size: 1rem;
+    font-size: 1rem; 
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 lika stora kolumner */
@@ -154,19 +153,19 @@ li {
 .skip-link {
     position: absolute;
     top: -100px; /* Lägger länken utanför webbsidan */
-    left: 1rem;
+    left: 1em;
+    font-size: 1.25em;
     z-index: 1000; /* Gör att länker syns över allt annat innehåll */
 
-    padding: 0.75rem var(--commonPadding);
+    padding: 0.75em var(--commonPadding);
     background: #FCFCFC;
     color: #270202;
     font-weight: 700;
-    border: 0.04rem solid #270202;
-    border-radius: 0.2rem;
-}
-
-.skip-link:focus {
+    border: 0.04em solid #270202;
+    border-radius: 0.2em;
+    &:focus-visible {
     top: 1rem; /* Visar länken inom webbsidan */
+    }
 }
 
 .main-container {    /* Innehåller allt */
@@ -174,18 +173,18 @@ li {
     max-width: 1280px; /* Begränsar storleken enligt mall */
     height: 100hw; /* Använder hela skärmen */
     margin: auto;       /* Lägger innehållet centrerat */
-    padding: 3rem 2rem;
+    padding: 3em 2em;
     background-color: #FCFCFC;
-    margin-bottom: 2rem; /* Lägger en bit bakgrundsfärg under containern */
+    margin-bottom: 2em; /* Lägger en bit bakgrundsfärg under containern */
 }
 
-.row1-col1 {
+.row1-col1-top-img {
     img {
         height: 450px;
     }
 }
 
-.row1-col2 {
+.row1-col2-content {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -194,7 +193,7 @@ li {
     dl {
         display: grid;
         grid-template-columns: repeat(2 1ft); /* 3 lika stora kolumner */
-        border: #270202 0.0625rem solid;
+        border: #270202 0.0625em solid;
         border-right: none;
         margin: 0;
     }
@@ -203,7 +202,7 @@ li {
         grid-row-start: 1; /* dt startar på första raden */
         padding-block: var(--commonPadding);
         text-align: center;
-        border-right:  #270202 0.0625rem solid;
+        border-right:  #270202 0.0625em solid;
         border-bottom:  #270202 1px solid;
         font-weight: 600;
         margin: 0;
@@ -213,23 +212,23 @@ li {
         grid-row-start: 2; /* dt startar på andra raden */
         padding-block: var(--commonPadding);
         text-align: center;
-        border-right:  #270202 0.0625rem solid;
+        border-right:  #270202 0.0625em solid;
         font-weight: 400;
         margin: 0;
     }
 
-    .blue-background { /* Skapar ljusblå bakgrund till text (enligt mall) */
-        background-color: #EBEBEB;
+    :nth-child(3):not(dl, dt, dd) { /* Skapar ljusblå bakgrund till text (enligt mall) */
+        background-color: #EBEBEB;  /* Förvisso enklare att skriva p */
         margin-top: 2em;
         padding: 1em;
     }
 
-    .describtion-bottom {
+    :nth-child(4) {  /* Förvisso enklare att skriva div */
         margin-top: auto;  
     }
 }
 
-.row2-col1 {
+.row2-col1-ingredients {
     fieldset {
         border:none;
     }
@@ -239,7 +238,7 @@ li {
     }
 }
 
-.row2-col2 {
+.row2-col2-how-to-do {
     ol {
         list-style-type: style;   /* Lägger tillbaka list-style */
         list-style-position: inside; /* Lägger siffrorna inom boxen */
@@ -247,11 +246,11 @@ li {
     }
 }
 
-.row3-col1 {
-    padding-bottom: 0.5rem;
+.row3-col1-serve {
+    padding-bottom: 0.5em;
 }
 
-.row4-col1, .row4-col2 {
+.row4-col1-bottom-img, .row4-col2-bottom-img {
     img {
         height:250px;
     }
