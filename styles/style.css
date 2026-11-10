@@ -132,15 +132,6 @@ h3 {
     padding: 1rem 0;
 }
 
-article {  /* Innehåller pannkakor */
-    font-weight: 400;   /* Är på hela innehållet förrutom rubriken */
-    font-size: 1rem; 
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 lika stora kolumner */
-    column-gap:  var(--commonPadding); 
-}
-
 img {
     min-width: 100%;
     object-fit: cover;
@@ -168,6 +159,15 @@ li {
     }
 }
 
+article {  /* Innehåller pannkakor */
+    font-weight: 400;   /* Är på hela innehållet förrutom rubriken */
+    font-size: 1rem; 
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 lika stora kolumner */
+    column-gap:  var(--commonPadding); 
+}
+
 .main-container {    /* Innehåller allt */
     width: 100vw;   /* Använder hela skärmen */ 
     max-width: 1280px; /* Begränsar storleken enligt mall */
@@ -178,13 +178,13 @@ li {
     margin-bottom: 2em; /* Lägger en bit bakgrundsfärg under containern */
 }
 
-.row1-col1-top-img {
+.top-image {
     img {
         height: 450px;
     }
 }
 
-.row1-col2-content {
+.heading-and-summary {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -217,7 +217,7 @@ li {
         margin: 0;
     }
 
-    :nth-child(3):not(dl, dt, dd) { /* Skapar ljusblå bakgrund till text (enligt mall) */
+    :nth-child(3):not(dl, dt, dd) { /* Skapar ljusblå bakgrund till text */
         background-color: #EBEBEB;  /* Förvisso enklare att skriva p */
         margin-top: 2em;
         padding: 1em;
@@ -228,7 +228,7 @@ li {
     }
 }
 
-.row2-col1-ingredients {
+.ingredients {
     fieldset {
         border:none;
     }
@@ -238,7 +238,7 @@ li {
     }
 }
 
-.row2-col2-how-to-do {
+.how-to-do {
     ol {
         list-style-type: style;   /* Lägger tillbaka list-style */
         list-style-position: inside; /* Lägger siffrorna inom boxen */
@@ -246,11 +246,11 @@ li {
     }
 }
 
-.row3-col1-serve {
+.serve {
     padding-bottom: 0.5em;
 }
 
-.row4-col1-bottom-img, .row4-col2-bottom-img {
+.bottom-image {
     img {
         height:250px;
     }
