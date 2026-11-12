@@ -247,14 +247,11 @@ li {
   h2 {
     margin-bottom: 1.25rem;
   }
-}
 
-.div-serving-suggestions-images {
-  h2 {
-    margin-bottom: 0.5rem;
+  .div-serving-suggestions-images {
+    display: flex;
+    column-gap: 1.5rem;
   }
-  display: flex;
-  column-gap: 1.5rem;
 }
 
 .half {
