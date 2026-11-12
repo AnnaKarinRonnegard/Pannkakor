@@ -272,7 +272,7 @@ li {
   }
 }
 
-.section-serving-suggestion1, .section-serving-suggestion2 {
+.section-serving-suggestion {
   margin-bottom: var(--m-medium);
   h2 {
     margin-bottom: var(--m-short);
@@ -283,9 +283,8 @@ li {
   }
 }
 
-.section-serving-suggestion2 {
-  margin-top: auto; /* För dl i botten */
-
+.suggestion2 {
+  margin-top: auto; /* För att lägga i botten */
 }
 
 .footer {
