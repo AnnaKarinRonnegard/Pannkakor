@@ -1,31 +1,49 @@
 /***** VARIABLES ******/
 
 :root {
-  /*** spacing ***/
-  
-  --distance-huge: 4rem;
-  --distance-big: 2rem;
-  --distance-medium: 1.5rem;
-  --distance-short: 1rem;
+  /*** margin ***/
+
+  --m-huge: 3rem;
+  --m-big: 2rem;
+  --m-medium: 1.5rem;
+  --m-short: 1rem;
+
+  /*** padding ***/
+
+  --p-huge: 3em;
+  --p-big: 2em;
+  --p-medium: 1.5em;
+  --p-short: 1em;
+  --p-shorter: 0.5em;
+  --p-mini: 0.25em;
 
   /*** font size ***/
   --fs-big: 2.3rem;
   --fs-medium: 1.5rem;
-  --fs-small: 1.25;
-  --fs-smaller: 1.17rem;
+  --fs-small: 1.25rem;
+  --fs-smaller: 1.15rem;
 
   /*** font weight ***/
   --fw-big: 700;
 
-  /*** line hight ***/
-  --_lh-bigger: 2;
+  /*** border ***/
+  --b: #270202 0.0625em solid;
+
+  /*** color ***/
+  --background-dark: #270202;
+  --background-light: #fcfcfc;
+  --heading: #a10000;
+  --background-desription: #ebebeb;
 }
 
 /***** RESET ******/
 
 * {
   padding: 0;
+  margin: 0;
   font: inherit;
+  /* Sätter default höjd mellan varje rad, en bit över 1 för läsbarhet  */
+  line-height: calc(1em + 0.5rem);
 }
 
 *,
@@ -34,29 +52,11 @@
   box-sizing: border-box;
 }
 
-*:not(dialog) {
-  margin: 0;
-}
-
 /* Förhindrar font size inflation, dvs att webbläsaren ökar den teckenstorleken automatiskt på t.ex en mobil. Detta kan förstöra designen på en responsiv design */
 html {
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
-}
-
-* {
-  /* Sätter default höjd mellan varje rad, en bra med en bit över 1 för läsbarhet  */
-  line-height: calc(1em + 0.5rem);
-}
-
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
 }
 
 /* input,  
@@ -76,6 +76,15 @@ textarea:not([rows]) {
     scroll-margin-block: 5ex;
 } */
 
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
 /***** BASIC SETTINGS ******/
 
 h1,
@@ -92,7 +101,9 @@ h6 {
 
 p {
   text-wrap: pretty; /* Ser till att enstaka ord ej finns ensamt under */
-  margin-block: var(--distance-short); /* Lägger till margin mellan p-taggar, då de var borta */
+  margin-block: var(
+    --m-short
+  ); /* Lägger till margin mellan p-taggar, då de var borta */
   overflow-wrap: break-word; /* Hindrar overflow om mindre box-utrymma än ordlängd */
   hyphens: auto; /* Orden "break-word" avdelas efter ordlista */
   /* max-width: 30ch; - begränsar textrader till 30 char om mycket text */
@@ -108,37 +119,36 @@ ol[role="list"] {
 
 body {
   min-height: 100vh;
-  background-color: #270202;
+  background-color: var(--background-dark);
 }
 
 h1 {
-  color: #a10000;
+  color: var(--heading);
   font-weight: var(--fw-big);
   font-style: bold;
   font-size: var(--fs-big);
 }
 
 h2 {
-  margin-block: var(--distance-huge) var(--distance-short);
+  margin-block: var(--m-huge) var(--m-short);
   font-size: var(--fs-medium);
 }
 
 h2,
 h1 {
   &:focus-visible {
-    border: solid 0.0625em #270202;
-    padding: 0.2em 0.5em;
+    padding: var(--p-mini) var(--p-shorter);
     width: fit-content;
   }
 }
 
 h2:focus-visible {
-  margin-block: 2.2em var(--distance-medium);
+  margin-block: var(--m-huge) var(--m-medium);
 }
 
 h3 {
   font-size: var(--fs-smaller);
-  margin-block: var(--distance-short);
+  margin-block: var(--m-short);
 }
 
 img {
@@ -147,7 +157,8 @@ img {
 }
 
 li {
-  line-height: var(--_lh-bigger);
+  --lh-bigger: 2; /* skriver över resetens default line-height på 1.5 */
+  line-height: var(--lh-bigger);
 }
 
 .skip-link {
@@ -157,11 +168,10 @@ li {
   font-size: var(--fs-small);
   z-index: 1000; /* Gör att länker syns över allt annat innehåll */
 
-  padding: 0.75em var(--distance-medium);
-  background: #fcfcfc;
-  color: #270202;
+  padding: 0.75em var(--p-medium);
+  background: var(--background-light);
+  color: var(--background-dark);
   font-weight: var(--fw-big);
-  border: 0.04em solid #270202;
   border-radius: 0.2em;
   &:focus-visible {
     top: 1rem; /* Visar länken inom webbsidan */
@@ -174,10 +184,11 @@ li {
   max-width: 1280px; /* Begränsar storleken enligt mall */
   height: 100hw; /* Använder hela skärmen */
   margin: auto; /* Lägger innehållet centrerat */
-  padding: 3em 2em;
-  background-color: #fcfcfc;
-  margin-bottom: 2em; /* Lägger en bit bakgrundsfärg under containern */
-  font-weight: 400; /* Är på hela innehållet förrutom rubriken */
+  padding: var(--p-huge) var(--p-big);
+  background-color: var(--background-light);
+  margin-bottom: var(
+    --m-big
+  ); /* Lägger en bit bakgrundsfärg under containern */
   font-family:
     "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -186,7 +197,7 @@ li {
 .articel-columns {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 lika stora kolumner */
-  column-gap: var(--distance-medium);
+  column-gap: var(--m-medium);
 }
 
 .section-top-image {
@@ -203,9 +214,11 @@ li {
 
   p:nth-of-type(1) {
     /* Skapar ljusblå bakgrund till text */
-    background-color: #ebebeb; /* Förvisso enklare att skriva bara p */
-    margin-top: 2em;
-    padding: 1em;
+    background-color: var(
+      --background-desription
+    ); /* Förvisso enklare att skriva bara p */
+    margin-top: var(--m-big);
+    padding: var(--p-short);
   }
 
   :nth-child(4) {
@@ -222,9 +235,9 @@ li {
   dt,
   dd {
     /* Gemensamt för dd och dt */
-    padding-block: var(--distance-medium);
+    padding-block: var(--p-medium);
     text-align: center;
-    border: #270202 0.0625em solid;
+    border: var(--b);
     &:not(:nth-child(n + 5)) {
       border-right: none; /* Tar bort dubbel border */
     }
@@ -241,13 +254,13 @@ li {
   }
 }
 
-.section-ingredients {
+.article-section-ingredients {
   fieldset {
     border: none;
   }
 
   ul {
-    margin-top: var(--distance-medium);
+    margin-top: var(--m-medium);
   }
 }
 
@@ -255,18 +268,18 @@ li {
   ol {
     list-style-type: style; /* Lägger tillbaka list-style */
     list-style-position: inside; /* Lägger siffrorna inom boxen */
-    margin-top: var(--distance-medium);
+    margin-top: var(--m-medium);
   }
 }
 
-.section-serving-suggestions {
+.article-no-columns {
   h2 {
-    margin-bottom: var(--distance-short);
+    margin-bottom: var(--m-short);
   }
 
   .div-serving-suggestions-images {
     display: flex;
-    column-gap: var(--distance-medium);
+    column-gap: var(--m-medium);
   }
 }
 
@@ -278,8 +291,8 @@ li {
 }
 
 .footer {
-  margin-bottom: var(--distance-big);
+  margin-bottom: var(--m-big);
   justify-items: center;
   font-size: var(--fs-medium);
-  color: #ebebeb;
+  color: var(--background-light);
 }
