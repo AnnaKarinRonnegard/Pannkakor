@@ -272,22 +272,20 @@ li {
   }
 }
 
-.article-no-columns {
+.section-serving-suggestion1, .section-serving-suggestion2 {
+  margin-bottom: var(--m-medium);
   h2 {
     margin-bottom: var(--m-short);
   }
 
-  .div-serving-suggestions-images {
-    display: flex;
-    column-gap: var(--m-medium);
-  }
-}
-
-.half {
-  flex: 1;
   img {
     height: 250px;
   }
+}
+
+.section-serving-suggestion2 {
+  margin-top: auto; /* För dl i botten */
+
 }
 
 .footer {
