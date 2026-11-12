@@ -197,7 +197,7 @@ li {
   }
 }
 
-.section-heading-and-summary > .dl-list {
+.section-heading-and-summary > dl {
   margin-top: auto; /* För dl i botten */
   display: grid;
   grid-template-columns: repeat(2 1ft); /* 3 lika stora kolumner */
@@ -250,7 +250,8 @@ li {
 }
 
 .div-serving-suggestions-images {
-  h2 {margin-bottom: 0.5rem;
+  h2 {
+    margin-bottom: 0.5rem;
   }
   display: flex;
   column-gap: 1.5rem;
@@ -258,7 +259,7 @@ li {
 
 .half {
   flex: 1;
-    img {
+  img {
     height: 250px;
   }
 }
