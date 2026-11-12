@@ -1,6 +1,24 @@
 /***** VARIABLES ******/
+
 :root {
-  --commonPadding: 1.5rem;
+  /*** spacing ***/
+  
+  --distance-huge: 4rem;
+  --distance-big: 2rem;
+  --distance-medium: 1.5rem;
+  --distance-short: 1rem;
+
+  /*** font size ***/
+  --fs-big: 2.3rem;
+  --fs-medium: 1.5rem;
+  --fs-small: 1.25;
+  --fs-smaller: 1.17rem;
+
+  /*** font weight ***/
+  --fw-big: 700;
+
+  /*** line hight ***/
+  --_lh-bigger: 2;
 }
 
 /***** RESET ******/
@@ -74,7 +92,7 @@ h6 {
 
 p {
   text-wrap: pretty; /* Ser till att enstaka ord ej finns ensamt under */
-  margin-block: 1rem; /* Lägger till margin mellan p-taggar, då de var borta */
+  margin-block: var(--distance-short); /* Lägger till margin mellan p-taggar, då de var borta */
   overflow-wrap: break-word; /* Hindrar overflow om mindre box-utrymma än ordlängd */
   hyphens: auto; /* Orden "break-word" avdelas efter ordlista */
   /* max-width: 30ch; - begränsar textrader till 30 char om mycket text */
@@ -95,14 +113,14 @@ body {
 
 h1 {
   color: #a10000;
-  font-weight: 700;
+  font-weight: var(--fw-big);
   font-style: bold;
-  font-size: 2.3rem;
+  font-size: var(--fs-big);
 }
 
 h2 {
-  padding: 4rem 0rem 1rem;
-  font-size: 1.5rem;
+  margin-block: var(--distance-huge) var(--distance-short);
+  font-size: var(--fs-medium);
 }
 
 h2,
@@ -115,13 +133,12 @@ h1 {
 }
 
 h2:focus-visible {
-  margin: 2.2em 0 var(--commonPadding);
+  margin-block: 2.2em var(--distance-medium);
 }
 
 h3 {
-  font-size: 1.17rem;
-  font-weight: 400;
-  padding: 1rem 0;
+  font-size: var(--fs-smaller);
+  margin-block: var(--distance-short);
 }
 
 img {
@@ -130,20 +147,20 @@ img {
 }
 
 li {
-  line-height: 2;
+  line-height: var(--_lh-bigger);
 }
 
 .skip-link {
   position: absolute;
   top: -100px; /* Lägger länken utanför webbsidan */
   left: 1em;
-  font-size: 1.25em;
+  font-size: var(--fs-small);
   z-index: 1000; /* Gör att länker syns över allt annat innehåll */
 
-  padding: 0.75em var(--commonPadding);
+  padding: 0.75em var(--distance-medium);
   background: #fcfcfc;
   color: #270202;
-  font-weight: 700;
+  font-weight: var(--fw-big);
   border: 0.04em solid #270202;
   border-radius: 0.2em;
   &:focus-visible {
@@ -169,7 +186,7 @@ li {
 .articel-columns {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 lika stora kolumner */
-  column-gap: var(--commonPadding);
+  column-gap: var(--distance-medium);
 }
 
 .section-top-image {
@@ -205,7 +222,7 @@ li {
   dt,
   dd {
     /* Gemensamt för dd och dt */
-    padding-block: var(--commonPadding);
+    padding-block: var(--distance-medium);
     text-align: center;
     border: #270202 0.0625em solid;
     &:not(:nth-child(n + 5)) {
@@ -215,12 +232,11 @@ li {
 
   dt {
     grid-row-start: 1; /* dt startar på första raden */
-    font-weight: 600;
+    font-weight: var(--fw-big);
   }
 
   dd {
     grid-row-start: 2; /* dt startar på andra raden */
-    font-weight: 400;
     border-top: none; /* Tar bort dubbel border */
   }
 }
@@ -231,7 +247,7 @@ li {
   }
 
   ul {
-    margin-top: var(--commonPadding);
+    margin-top: var(--distance-medium);
   }
 }
 
@@ -239,18 +255,18 @@ li {
   ol {
     list-style-type: style; /* Lägger tillbaka list-style */
     list-style-position: inside; /* Lägger siffrorna inom boxen */
-    margin-top: var(--commonPadding);
+    margin-top: var(--distance-medium);
   }
 }
 
 .section-serving-suggestions {
   h2 {
-    margin-bottom: 1.25rem;
+    margin-bottom: var(--distance-short);
   }
 
   .div-serving-suggestions-images {
     display: flex;
-    column-gap: 1.5rem;
+    column-gap: var(--distance-medium);
   }
 }
 
@@ -262,8 +278,8 @@ li {
 }
 
 .footer {
-  margin-bottom: 2rem;
+  margin-bottom: var(--distance-big);
   justify-items: center;
-  font-size: 1.2rem;
+  font-size: var(--fs-medium);
   color: #ebebeb;
 }
