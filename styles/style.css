@@ -1,24 +1,23 @@
+/***** VARIABLES ******/
+:root {
+  --commonPadding: 1.5rem;
+}
+
+/***** RESET ******/
+
 * {
-    padding: 0;
-    font:inherit;
-    --commonPadding: 1.5rem; /* Skapar en variabel */
+  padding: 0;
+  font: inherit;
 }
 
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-}  /*  :: är pseusoelement som används för att lägga till (dekorativt) innehåll eller stilar före eller efter ett elements faktiska innehåll, utan att du behöver ändra själva HTML-strukturen.
-De skapas virtuellt i webbläsaren och syns inte i DOM-trädet, vilket gör att skärmläsare ibland kan missa dem.
-
-Exempel:
-Lägger till Read this: före det som är definierat mellan p-taggarna på varje p.
-p::before {
-  content: "Read this: ";
+  box-sizing: border-box;
 }
- */
+
 *:not(dialog) {
-    margin: 0; 
+  margin: 0;
 }
 
 /* Förhindrar font size inflation, dvs att webbläsaren ökar den teckenstorleken automatiskt på t.ex en mobil. Detta kan förstöra designen på en responsiv design */
@@ -28,18 +27,18 @@ html {
   text-size-adjust: none;
 }
 
-/* * {
-  line-height: calc(1em + 0.5rem); 
-} */
+* {
+  /* Sätter default höjd mellan varje rad, en bra med en bit över 1 för läsbarhet  */
+  line-height: calc(1em + 0.5rem);
+}
 
 img,
 picture,
 video,
 canvas,
 svg {
-    display: block;
-    max-width: 100%;
-  /* vertical-align: middle; tips, dock ej med display: block.... */
+  display: block;
+  max-width: 100%;
 }
 
 /* input,  
@@ -54,212 +53,219 @@ textarea:not([rows]) {
   min-height: 10em
 }   Används förvisso inte i detta dokument, men exempel är bra att ha. */
 
-/* :target {
-  scroll-margin-block: 5ex;
+/* TIPS
+    :target
+    scroll-margin-block: 5ex;
 } */
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    text-wrap: balance; /* Rubriker balanseras om långa */
-    overflow-wrap: break-word;
-    hyphens: auto;
-}
+/***** BASIC SETTINGS ******/
 
-/* Bas styles */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-    font-weight: bold;
-    text-wrap: balance; /* Ser till att texten avvägs jämnt vid radbryt */
+  font-weight: bold;
+  text-wrap: balance; /* Ser till att texten avvägs jämnt vid radbryt */
+  overflow-wrap: break-word;
+  hyphens: auto; /* Avstavar efter ordlista - ej länkar */
 }
 
 p {
-    text-wrap: pretty; /* Ser till att enstaka ord ej finns ensamt under */
-    margin-block: 1rem; /* Lägger till margin mellan p-taggar, då de var borta */
-    overflow-wrap: break-word; /* Hindrar overflow om mindre box-utrymma än ordlängd */
-    hyphens: auto; /* Orden "break-word" avdelas efter ordlista */
-    /* Sätter höjden mellan varje rad, bra med en bit över 1 för läsbarhet  */
-    line-height: 1.5;/
- /* max-width: 30ch; - begränsar textrader till 30 char om mycket text */
+  text-wrap: pretty; /* Ser till att enstaka ord ej finns ensamt under */
+  margin-block: 1rem; /* Lägger till margin mellan p-taggar, då de var borta */
+  overflow-wrap: break-word; /* Hindrar overflow om mindre box-utrymma än ordlängd */
+  hyphens: auto; /* Orden "break-word" avdelas efter ordlista */
+  /* max-width: 30ch; - begränsar textrader till 30 char om mycket text */
 }
-
 
 /* Ta bort list-style på ul och ol element med en list role. OBS sätt role="list" på ol- eller ul-tag */
 ul[role="list"],
 ol[role="list"] {
-    list-style: none;
+  list-style: none;
 }
+
+/****** SPECIFIC SETTINGS *******/
 
 body {
-    min-height: 100vh;
-    background-color: #270202;
+  min-height: 100vh;
+  background-color: #270202;
 }
 
-h1 { 
-    color: #a10000;
-    font-weight: 700;
-    font-style: bold;
-    font-size: 2.3rem;
+h1 {
+  color: #a10000;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 2.3rem;
 }
 
 h2 {
-    padding: 4rem 0rem 1rem;
-    font-size: 1.5rem;
+  padding: 4rem 0rem 1rem;
+  font-size: 1.5rem;
 }
 
-h2, h1 {
-    &:focus-visible {
+h2,
+h1 {
+  &:focus-visible {
     border: solid 0.0625em #270202;
     padding: 0.2em 0.5em;
     width: fit-content;
-    }
+  }
 }
 
 h2:focus-visible {
-    margin: 2.2em 0 var(--commonPadding);
+  margin: 2.2em 0 var(--commonPadding);
 }
 
 h3 {
-    font-size: 1.17rem;
-    font-weight: 400;
-    padding: 1rem 0;
+  font-size: 1.17rem;
+  font-weight: 400;
+  padding: 1rem 0;
 }
 
 img {
-    min-width: 100%;
-    object-fit: cover;
+  min-width: 100%;
+  object-fit: cover;
 }
 
 li {
-    line-height: 2;
+  line-height: 2;
 }
 
 .skip-link {
-    position: absolute;
-    top: -100px; /* Lägger länken utanför webbsidan */
-    left: 1em;
-    font-size: 1.25em;
-    z-index: 1000; /* Gör att länker syns över allt annat innehåll */
+  position: absolute;
+  top: -100px; /* Lägger länken utanför webbsidan */
+  left: 1em;
+  font-size: 1.25em;
+  z-index: 1000; /* Gör att länker syns över allt annat innehåll */
 
-    padding: 0.75em var(--commonPadding);
-    background: #FCFCFC;
-    color: #270202;
-    font-weight: 700;
-    border: 0.04em solid #270202;
-    border-radius: 0.2em;
-    &:focus-visible {
+  padding: 0.75em var(--commonPadding);
+  background: #fcfcfc;
+  color: #270202;
+  font-weight: 700;
+  border: 0.04em solid #270202;
+  border-radius: 0.2em;
+  &:focus-visible {
     top: 1rem; /* Visar länken inom webbsidan */
+  }
+}
+
+.main-container {
+  /* Innehåller allt */
+  width: 100vw; /* Använder hela skärmen */
+  max-width: 1280px; /* Begränsar storleken enligt mall */
+  height: 100hw; /* Använder hela skärmen */
+  margin: auto; /* Lägger innehållet centrerat */
+  padding: 3em 2em;
+  background-color: #fcfcfc;
+  margin-bottom: 2em; /* Lägger en bit bakgrundsfärg under containern */
+  font-weight: 400; /* Är på hela innehållet förrutom rubriken */
+  font-family:
+    "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.articel-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 lika stora kolumner */
+  column-gap: var(--commonPadding);
+}
+
+.section-top-image {
+  img {
+    height: 450px;
+  }
+}
+
+.section-heading-and-summary {
+  /* För dl i botten */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  p:nth-of-type(1) {
+    /* Skapar ljusblå bakgrund till text */
+    background-color: #ebebeb; /* Förvisso enklare att skriva bara p */
+    margin-top: 2em;
+    padding: 1em;
+  }
+
+  :nth-child(4) {
+    /* Förvisso enklare att skriva div */
+    margin-top: auto;
+  }
+}
+
+.section-heading-and-summary > .dl-list {
+  margin-top: auto; /* För dl i botten */
+  display: grid;
+  grid-template-columns: repeat(2 1ft); /* 3 lika stora kolumner */
+
+  dt,
+  dd {
+    /* Gemensamt för dd och dt */
+    padding-block: var(--commonPadding);
+    text-align: center;
+    border: #270202 0.0625em solid;
+    &:not(:nth-child(n + 5)) {
+      border-right: none; /* Tar bort dubbel border */
     }
+  }
+
+  dt {
+    grid-row-start: 1; /* dt startar på första raden */
+    font-weight: 600;
+  }
+
+  dd {
+    grid-row-start: 2; /* dt startar på andra raden */
+    font-weight: 400;
+    border-top: none; /* Tar bort dubbel border */
+  }
 }
 
-article {  /* Innehåller pannkakor */
-    font-weight: 400;   /* Är på hela innehållet förrutom rubriken */
-    font-size: 1rem; 
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 lika stora kolumner */
-    column-gap:  var(--commonPadding); 
+.section-ingredients {
+  fieldset {
+    border: none;
+  }
+
+  ul {
+    margin-top: var(--commonPadding);
+  }
 }
 
-.main-container {    /* Innehåller allt */
-    width: 100vw;   /* Använder hela skärmen */ 
-    max-width: 1280px; /* Begränsar storleken enligt mall */
-    height: 100hw; /* Använder hela skärmen */
-    margin: auto;       /* Lägger innehållet centrerat */
-    padding: 3em 2em;
-    background-color: #FCFCFC;
-    margin-bottom: 2em; /* Lägger en bit bakgrundsfärg under containern */
+.section-how-to-do {
+  ol {
+    list-style-type: style; /* Lägger tillbaka list-style */
+    list-style-position: inside; /* Lägger siffrorna inom boxen */
+    margin-top: var(--commonPadding);
+  }
 }
 
-.top-image {
+.section-serving-suggestions {
+  h2 {
+    margin-bottom: 1.25rem;
+  }
+}
+
+.div-serving-suggestions-images {
+  h2 {margin-bottom: 0.5rem;
+  }
+  display: flex;
+  column-gap: 1.5rem;
+}
+
+.half {
+  flex: 1;
     img {
-        height: 450px;
-    }
+    height: 250px;
+  }
 }
-
-.heading-and-summary {
-    /* För dl i botten */
-    display: flex;
-    flex-direction: column; 
-    height: 100%; 
-
-    dl {
-        margin-top: auto; /* För dl i botten */
-        display: grid;
-        grid-template-columns: repeat(2 1ft); /* 3 lika stora kolumner */
-            
-        dt, dd {    /* Gemensamt för dd och dt */
-            padding-block: var(--commonPadding);
-            text-align: center;
-            border:  #270202 0.0625em solid;
-            &:not(:nth-child(n+5)) {
-                border-right: none; /* Tar bort dubbel border */
-            }
-         }
-
-        dt {
-            grid-row-start: 1; /* dt startar på första raden */
-            font-weight: 600;
-        }
-
-        dd {
-            grid-row-start: 2; /* dt startar på andra raden */
-            font-weight: 400;
-            border-top: none; /* Tar bort dubbel border */
-        }
-
-    }
-
-     p:nth-of-type(1) { /* Skapar ljusblå bakgrund till text */
-        background-color: #EBEBEB;  /* Förvisso enklare att skriva bara p */
-        margin-top: 2em;
-        padding: 1em;
-    }
-
-    :nth-child(4) {  /* Förvisso enklare att skriva div */
-        margin-top: auto;  
-    }
-}
-
-.ingredients {
-    fieldset {
-        border:none;
-    }
-    
-    ul {
-        margin-top: var(--commonPadding);
-    }
-}
-
-.how-to-do {
-    ol {
-        list-style-type: style;   /* Lägger tillbaka list-style */
-        list-style-position: inside; /* Lägger siffrorna inom boxen */
-        margin-top: var(--commonPadding);
-    }
-}
-
-.text-serving-suggestion {
-    padding-bottom: 0.5em; 
-}
-
-.bottom-image {
-    img {
-        height:250px;
-    }
-}
-
 
 .footer {
-    margin-bottom: 2rem;
-    justify-items: center;
-    font-size: 1.2rem;
-    color: #EBEBEB; 
+  margin-bottom: 2rem;
+  justify-items: center;
+  font-size: 1.2rem;
+  color: #ebebeb;
 }
