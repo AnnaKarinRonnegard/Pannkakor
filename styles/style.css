@@ -1,17 +1,12 @@
 /***** VARIABLES ******/
 :root {
   /*** margin ***/
-
   --m-space-big: 2rem;
   --m-space-medium: 1.5rem;
   --m-space-short: 1rem;
 
   /*** padding ***/
-
   --p-space-medium: 1.5em;
-
-  /*** font size ***/
-  --fs-big: 1.5rem;
 
   /*** font weight ***/
   --fw-bold: 700;
@@ -116,14 +111,15 @@ h1 {
     padding: 0.2em 0.3em;
     width: fit-content;
   }
-  @media (width > 960px){ /* exempel på responsive */
+  @media (width > 960px) {
+    /* exempel på responsive */
     font-size: 2.3rem;
   }
 }
 
 h2 {
   margin-block: 3rem var(--m-space-short);
-  font-size: var(--fs-big);
+  font-size: 1.5rem;
   &:focus-visible {
     margin-block: 3rem var(--m-space-medium);
     padding: 0.25em 0.5em;
@@ -173,15 +169,15 @@ li {
   margin-bottom: var(
     --m-space-big
   ); /* Lägger en bit bakgrundsfärg under containern */
-  font-family:
-    "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .articel-columns {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 lika stora kolumner */
   column-gap: var(--m-space-medium);
+  font-family:
+    "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .section1-top-image {
@@ -209,7 +205,8 @@ li {
   }
 }
 
-.section2-heading-and-facts > dl { /* > direkt barn, finns förvisso bara en */
+.section2-heading-and-facts > dl {
+  /* > direkt barn, finns förvisso bara en */
   margin-top: auto; /* För dl i botten */
   display: grid; /* Behöver sätta pga ärvs inte */
   grid-template-columns: repeat(2 1ft); /* 3 lika stora kolumner */
@@ -271,8 +268,12 @@ li {
 }
 
 .footer {
-  margin-bottom: var(--m-space-big);
   justify-items: center;
-  font-size: var(--fs-big);
   color: var(--background-light);
+  font-family:
+    "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 1.25rem;
+
+  margin-bottom: var(--m-space-big);
 }
