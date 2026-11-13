@@ -39,23 +39,6 @@ html {
   text-size-adjust: none;
 }
 
-/* input,  
-button,
-textarea,
-select {
-  font-family: inherit;
-  font-size: inherit;
-}  Används förvisso inte i detta dokument, men exempel är bra att ha.
-
-textarea:not([rows]) {
-  min-height: 10em
-}   Används förvisso inte i detta dokument, men exempel är bra att ha. */
-
-/* TIPS
-    :target
-    scroll-margin-block: 5ex;
-} */
-
 img,
 picture,
 video,
