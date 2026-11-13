@@ -111,24 +111,24 @@ h1 {
   color: #a10000;
   font-weight: var(--fw-bold);
   font-style: bold;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
+  &:focus-visible {
+    padding: 0.2em 0.3em;
+    width: fit-content;
+  }
+  @media (width > 960px){ /* exempel på responsive */
+    font-size: 2.3rem;
+  }
 }
 
 h2 {
   margin-block: 3rem var(--m-space-short);
   font-size: var(--fs-big);
-}
-
-h2,
-h1 {
   &:focus-visible {
+    margin-block: 3rem var(--m-space-medium);
     padding: 0.25em 0.5em;
     width: fit-content;
   }
-}
-
-h2:focus-visible {
-  margin-block: 3rem var(--m-space-medium);
 }
 
 h3 {
@@ -190,7 +190,7 @@ li {
   }
 }
 
-.section2-heading-and-summary {
+.section2-heading-and-facts {
   /* För dl i botten */
   display: flex;
   flex-direction: column;
@@ -209,9 +209,9 @@ li {
   }
 }
 
-.section2-heading-and-summary > dl {
+.section2-heading-and-facts > dl { /* > direkt barn, finns förvisso bara en */
   margin-top: auto; /* För dl i botten */
-  display: grid;
+  display: grid; /* Behöver sätta pga ärvs inte */
   grid-template-columns: repeat(2 1ft); /* 3 lika stora kolumner */
 
   dt,
