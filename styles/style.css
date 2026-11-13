@@ -200,13 +200,13 @@ li {
   column-gap: var(--m-medium);
 }
 
-.section-top-image {
+.section1-top-image {
   img {
     height: 450px;
   }
 }
 
-.section-heading-and-summary {
+.section2-heading-and-summary {
   /* För dl i botten */
   display: flex;
   flex-direction: column;
@@ -227,7 +227,7 @@ li {
   }
 }
 
-.section-heading-and-summary > dl {
+.section2-heading-and-summary > dl {
   margin-top: auto; /* För dl i botten */
   display: grid;
   grid-template-columns: repeat(2 1ft); /* 3 lika stora kolumner */
@@ -254,7 +254,7 @@ li {
   }
 }
 
-.article-section-ingredients {
+.section3-ingredients {
   fieldset {
     border: none;
   }
@@ -264,7 +264,7 @@ li {
   }
 }
 
-.section-how-to-do {
+.section4-how-to-do {
   ol {
     list-style-type: style; /* Lägger tillbaka list-style */
     list-style-position: inside; /* Lägger siffrorna inom boxen */
@@ -272,7 +272,7 @@ li {
   }
 }
 
-.section-serving-suggestion {
+.section5-serving-suggestion, .section6-serving-suggestion {
   margin-bottom: var(--m-medium);
   h2 {
     margin-bottom: var(--m-short);
