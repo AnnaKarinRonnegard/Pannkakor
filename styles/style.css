@@ -1,39 +1,24 @@
 /***** VARIABLES ******/
-
 :root {
   /*** margin ***/
 
-  --m-huge: 3rem;
-  --m-big: 2rem;
-  --m-medium: 1.5rem;
-  --m-short: 1rem;
+  --m-space-big: 2rem;
+  --m-space-medium: 1.5rem;
+  --m-space-short: 1rem;
 
   /*** padding ***/
 
-  --p-huge: 3em;
-  --p-big: 2em;
-  --p-medium: 1.5em;
-  --p-short: 1em;
-  --p-shorter: 0.5em;
-  --p-mini: 0.25em;
+  --p-space-medium: 1.5em;
 
   /*** font size ***/
-  --fs-big: 2.3rem;
-  --fs-medium: 1.5rem;
-  --fs-small: 1.25rem;
-  --fs-smaller: 1.15rem;
+  --fs-big: 1.5rem;
 
   /*** font weight ***/
-  --fw-big: 700;
-
-  /*** border ***/
-  --b: #270202 0.0625em solid;
+  --fw-bold: 700;
 
   /*** color ***/
   --background-dark: #270202;
   --background-light: #fcfcfc;
-  --heading: #a10000;
-  --background-desription: #ebebeb;
 }
 
 /***** RESET ******/
@@ -102,7 +87,7 @@ h6 {
 p {
   text-wrap: pretty; /* Ser till att enstaka ord ej finns ensamt under */
   margin-block: var(
-    --m-short
+    --m-space-short
   ); /* Lägger till margin mellan p-taggar, då de var borta */
   overflow-wrap: break-word; /* Hindrar overflow om mindre box-utrymma än ordlängd */
   hyphens: auto; /* Orden "break-word" avdelas efter ordlista */
@@ -123,32 +108,32 @@ body {
 }
 
 h1 {
-  color: var(--heading);
-  font-weight: var(--fw-big);
+  color: #a10000;
+  font-weight: var(--fw-bold);
   font-style: bold;
-  font-size: var(--fs-big);
+  font-size: 2.5rem;
 }
 
 h2 {
-  margin-block: var(--m-huge) var(--m-short);
-  font-size: var(--fs-medium);
+  margin-block: 3rem var(--m-space-short);
+  font-size: var(--fs-big);
 }
 
 h2,
 h1 {
   &:focus-visible {
-    padding: var(--p-mini) var(--p-shorter);
+    padding: 0.25em 0.5em;
     width: fit-content;
   }
 }
 
 h2:focus-visible {
-  margin-block: var(--m-huge) var(--m-medium);
+  margin-block: 3rem var(--m-space-medium);
 }
 
 h3 {
-  font-size: var(--fs-smaller);
-  margin-block: var(--m-short);
+  font-size: 1.15rem;
+  margin-block: var(--m-space-short);
 }
 
 img {
@@ -157,21 +142,20 @@ img {
 }
 
 li {
-  --lh-bigger: 2; /* skriver över resetens default line-height på 1.5 */
-  line-height: var(--lh-bigger);
+  line-height: 2; /* skriver över resetens default line-height på 1.5 */
 }
 
 .skip-link {
   position: absolute;
   top: -100px; /* Lägger länken utanför webbsidan */
   left: 1em;
-  font-size: var(--fs-small);
+  font-size: 1.25rem;
   z-index: 1000; /* Gör att länker syns över allt annat innehåll */
 
-  padding: 0.75em var(--p-medium);
+  padding: 0.75em var(--p-space-medium);
   background: var(--background-light);
   color: var(--background-dark);
-  font-weight: var(--fw-big);
+  font-weight: var(--fw-bold);
   border-radius: 0.2em;
   &:focus-visible {
     top: 1rem; /* Visar länken inom webbsidan */
@@ -184,10 +168,10 @@ li {
   max-width: 1280px; /* Begränsar storleken enligt mall */
   height: 100hw; /* Använder hela skärmen */
   margin: auto; /* Lägger innehållet centrerat */
-  padding: var(--p-huge) var(--p-big);
+  padding: 3em 2em;
   background-color: var(--background-light);
   margin-bottom: var(
-    --m-big
+    --m-space-big
   ); /* Lägger en bit bakgrundsfärg under containern */
   font-family:
     "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -197,7 +181,7 @@ li {
 .articel-columns {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 lika stora kolumner */
-  column-gap: var(--m-medium);
+  column-gap: var(--m-space-medium);
 }
 
 .section1-top-image {
@@ -213,12 +197,10 @@ li {
   height: 100%;
 
   p:nth-of-type(1) {
-    /* Skapar ljusblå bakgrund till text */
-    background-color: var(
-      --background-desription
-    ); /* Förvisso enklare att skriva bara p */
-    margin-top: var(--m-big);
-    padding: var(--p-short);
+    /* Förvisso enklare att skriva bara p */
+    background-color: #ebebeb; /* Skapar ljusblå bakgrund till text */
+    margin-top: var(--m-space-big);
+    padding: 1em;
   }
 
   :nth-child(4) {
@@ -235,9 +217,9 @@ li {
   dt,
   dd {
     /* Gemensamt för dd och dt */
-    padding-block: var(--p-medium);
+    padding-block: var(--p-space-medium);
     text-align: center;
-    border: var(--b);
+    border: #270202 0.0625em solid;
     &:not(:nth-child(n + 5)) {
       border-right: none; /* Tar bort dubbel border */
     }
@@ -245,7 +227,7 @@ li {
 
   dt {
     grid-row-start: 1; /* dt startar på första raden */
-    font-weight: var(--fw-big);
+    font-weight: var(--fw-bold);
   }
 
   dd {
@@ -260,7 +242,7 @@ li {
   }
 
   ul {
-    margin-top: var(--m-medium);
+    margin-top: var(--m-space-medium);
   }
 }
 
@@ -268,14 +250,15 @@ li {
   ol {
     list-style-type: style; /* Lägger tillbaka list-style */
     list-style-position: inside; /* Lägger siffrorna inom boxen */
-    margin-top: var(--m-medium);
+    margin-top: var(--m-space-medium);
   }
 }
 
-.section5-serving-suggestion, .section6-serving-suggestion {
-  margin-bottom: var(--m-medium);
+.section5-serving-suggestion,
+.section6-serving-suggestion {
+  margin-bottom: var(--m-space-medium);
   h2 {
-    margin-bottom: var(--m-short);
+    margin-bottom: var(--m-space-short);
   }
 
   img {
@@ -288,8 +271,8 @@ li {
 }
 
 .footer {
-  margin-bottom: var(--m-big);
+  margin-bottom: var(--m-space-big);
   justify-items: center;
-  font-size: var(--fs-medium);
+  font-size: var(--fs-big);
   color: var(--background-light);
 }
