@@ -143,9 +143,9 @@ li {
 
 .main-container {
   /* Innehåller allt */
-  width: 100vw; /* Använder hela skärmen */
-  max-width: 1280px; /* Begränsar storleken enligt mall */
-  height: 100hw; /* Använder hela skärmen */
+  width: 100vw; 
+  max-width: 1280px; /* Begränsar storleken*/
+  height: 100hw;
   margin: auto; /* Lägger innehållet centrerat */
   padding: 3em 2em;
   background-color: var(--background-light);
@@ -175,24 +175,17 @@ li {
   flex-direction: column;
   height: 100%;
 
-  p:nth-of-type(1) {
-    /* Förvisso enklare att skriva bara p */
+  p { /* Finns bara en */
     background-color: #ebebeb; /* Skapar ljusblå bakgrund till text */
     margin-top: var(--m-space-big);
     padding: 1em;
   }
-
-  :nth-child(4) {
-    /* Förvisso enklare att skriva div */
-    margin-top: auto;
-  }
 }
 
 .section2-heading-and-facts > dl {
-  /* > direkt barn, finns förvisso bara en */
   margin-top: auto; /* För dl i botten */
   display: grid; /* Behöver sätta pga ärvs inte */
-  grid-template-columns: repeat(2 1ft); /* 3 lika stora kolumner */
+  grid-template-columns: repeat(3, 1ft); /* 3 lika stora kolumner */
 
   dt,
   dd {
@@ -200,7 +193,7 @@ li {
     padding-block: var(--p-space-medium);
     text-align: center;
     border: #270202 0.0625em solid;
-    &:not(:nth-child(n + 5)) {
+    &:not(&:nth-child(n + 5)) {
       border-right: none; /* Tar bort dubbel border */
     }
   }
